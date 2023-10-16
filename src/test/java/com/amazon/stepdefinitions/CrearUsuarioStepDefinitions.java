@@ -11,7 +11,7 @@ import net.serenitybdd.screenplay.actions.Open;
 import net.serenitybdd.screenplay.actors.OnStage;
 
 
-public class AgregarCarritoStepDefinitions {
+public class CrearUsuarioStepDefinitions {
 
     @Dado("que una persona quiere ingresar a la pagina Utest")
     public void queUnaPersonaQuiereIngresarALaPaginaUtest() {

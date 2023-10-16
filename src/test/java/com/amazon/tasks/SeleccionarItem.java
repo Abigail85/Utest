@@ -5,7 +5,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 
 
-import static com.amazon.page.CabeceraPage.BUTTON_UNETE;
+import static com.amazon.page.PaginaPrincipal.BUTTON_UNETE;
 
 
 public class SeleccionarItem {
