@@ -1,7 +1,5 @@
 package com.amazon.models;
 
-
-
 public class Utest_Datos {
     private String nombre;
     private String apellido;

@@ -4,9 +4,10 @@ import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
 public class IngresarDispositivos {
-    public static final Target SPAN_DATOS_COMPUTADOR = Target.the("llenar los campos referentes a tu computadora").locatedBy("//span[text()='{0}']");
-    public static final Target SPAN_DATOS_CELULAR = Target.the("selecciona los datos acerca del celular").locatedBy("//span[text()='{0}']");
-    public static final Target SPAN_SISTEMA_OPERATIVO_CELULAR = Target.the("selecciona el sistema operativo del celular").located(By.xpath("//span[@class='ui-select-placeholder text-muted ng-hide' and text()='Select OS']"));
+    public static final Target SPAN_DATOS_DISPOSITIVOS = Target.the("llenar los campos referentes a tu computadora").locatedBy("//span[text()='{0}']");
+    public static final Target DIV_DATOS_DISPOSITIVOS = Target.the("llenar los campos referentes a tu computadora").locatedBy("//div[text()='{0}']");
+    public static final Target SELECT_DATOS_DISPOSITIVOS = Target.the("llenar los campos referentes a tu computadora").locatedBy("//*[@id='mobile-device']/div[3]/div[2]/div/div[1]/span/span[1]");
+
 
 
 }
