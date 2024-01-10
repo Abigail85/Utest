@@ -1,5 +1,4 @@
 plugins {
-    id "net.serenity-bdd.serenity-gradle-plugin" version "3.5.0"
     id 'java'
     id 'eclipse'
     id 'idea'
@@ -9,7 +8,11 @@ defaultTasks 'clean','test','aggregate'
 
 repositories {
     mavenCentral()
+    maven {
+        url 'https://repo.maven.apache.org/maven2'
+    }
 }
+
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -31,7 +34,8 @@ dependencies {
                 "net.serenity-bdd:serenity-cucumber:${serenityCoreVersion}",
                 "org.junit.jupiter:junit-jupiter-api:${junitVersion}",
                 "org.assertj:assertj-core:${assertJVersion}",
-                "ch.qos.logback:logback-classic:${logbackVersion}"
+                "ch.qos.logback:logback-classic:${logbackVersion}",
+                "net.serenity-bdd:serenity-ensure:${serenityCoreVersion}"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
 }
 
@@ -42,4 +46,3 @@ test {
 
 gradle.startParameter.continueOnFailure = true
 
-test.finalizedBy(aggregate)

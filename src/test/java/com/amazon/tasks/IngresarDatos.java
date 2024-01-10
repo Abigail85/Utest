@@ -2,6 +2,7 @@ package com.amazon.tasks;
 
 
 import com.amazon.interactions.IngresarDatosContrasenas;
+import com.amazon.interactions.IngresarDatosDeUbicacion;
 import com.amazon.interactions.IngresarDatosDispositivos;
 import com.amazon.interactions.IngresarDatosPersonales;
 import com.amazon.models.Utest_Datos;
@@ -64,6 +65,8 @@ public class IngresarDatos implements Task {
         int segundos =1;
         // Acciones para completar los datos del usuario
         actor.attemptsTo(IngresarDatosPersonales.con(usuarioDatos));
+        // Acciones para completar los datos de ubicacion
+        actor.attemptsTo(IngresarDatosDeUbicacion.con(usuarioDatos));
         // Acciones para completar los datos de los dispositivos
         actor.attemptsTo(IngresarDatosDispositivos.con(dispositivos));
         // Acciones para completar contraseñas

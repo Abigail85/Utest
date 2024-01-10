@@ -24,6 +24,7 @@ import static com.amazon.exceptions.ElUsuarioNoFueCreado.EL_USUARIO_NO_FUE_CREAD
 import static com.amazon.utils.MensajesFinales.MENSAJE_CREACION_EXITOSA;
 import static com.amazon.utils.MensajesFinales.MENSAJE_CREACION_FALLIDA;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 
 public class CrearUsuarioStepDefinitions {
@@ -40,14 +41,14 @@ public class CrearUsuarioStepDefinitions {
     @Cuando("^completa todos los datos$")
     public void completaTodosLosDatos(DataTable dataTable) {
         Performable tarea = IngresarDatos.paraLlenarElRegistro(dataTable);
-        OnStage.theActorInTheSpotlight().attemptsTo(tarea);
+        theActorInTheSpotlight().attemptsTo(tarea);
     }
 
 
     @Entonces("^debe ver el mensaje de bienvenida$")
     public void debeVerSuUsuarioCreadoDeManeraExitosa() {
-        OnStage.theActorInTheSpotlight().attemptsTo(LeerTextoSiExiste.delElemento(By.xpath("//div[@class='image-box-header']/child::h1")));
-        OnStage.theActorInTheSpotlight().should(seeThat(ElMensajeEnPantalla.esElIndicado(MENSAJE_CREACION_EXITOSA)).orComplainWith(ElUsuarioNoFueCreado.class, EL_USUARIO_NO_FUE_CREADO));
+        theActorInTheSpotlight().attemptsTo(LeerTextoSiExiste.delElemento(By.xpath("//div[@class='image-box-header']/child::h1")));
+        theActorInTheSpotlight().should(seeThat(ElMensajeEnPantalla.esElIndicado(MENSAJE_CREACION_EXITOSA)).orComplainWith(ElUsuarioNoFueCreado.class, EL_USUARIO_NO_FUE_CREADO));
     }
     @Dado("que una persona vuelve ingresar a la pagina Utest")
     public void queUnaPersonaVuelveIngresarALaPaginaUtest(){
@@ -60,14 +61,14 @@ public class CrearUsuarioStepDefinitions {
     @Cuando("^intenta completar con los mismos datos$")
     public void intentaCompletarConLosMismosDatos(DataTable dataTable) {
         Performable tarea = IngresarDatos.paraLlenarElRegistro(dataTable);
-        OnStage.theActorInTheSpotlight().attemptsTo(tarea);
+        theActorInTheSpotlight().attemptsTo(tarea);
     }
 
 
     @Entonces("^no debe ver el mensaje de bienvenida$")
     public void debeVerUnMensajeUsuarioCreadoDeManeraIncorrecta() {
-        OnStage.theActorInTheSpotlight().attemptsTo(LeerTextoSiExiste.delElemento(By.xpath("//div[@class='image-box-header']/child::h1")));
-        OnStage.theActorInTheSpotlight().should(seeThat(ElMensajeEnPantalla.esElIndicado(MENSAJE_CREACION_FALLIDA)).orComplainWith(ElUsuarioNoFueCreado.class, EL_USUARIO_NO_FUE_CREADO));
+        theActorInTheSpotlight().attemptsTo(LeerTextoSiExiste.delElemento(By.xpath("//div[@class='image-box-header']/child::h1")));
+        theActorInTheSpotlight().should(seeThat(ElMensajeEnPantalla.esElIndicado(MENSAJE_CREACION_FALLIDA)).orComplainWith(ElUsuarioNoFueCreado.class, EL_USUARIO_NO_FUE_CREADO));
 
 }
 
